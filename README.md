@@ -6,8 +6,8 @@ The website allows us to:
 2. Donate<br/>
 3. Find lost animals<br/>
 The website also contains<br/>
-1.Awareness <br/>
-2. Q&A<br/>
-3. 3.Reviews
+Awareness <br/>
+Q&A<br/>
+Reviews
 
 (NOTE: The home page is given under file draft3.html)
