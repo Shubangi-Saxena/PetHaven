@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 	
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+		<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+		<h1 style="color:#E3D42B;margin-top:40;text-align:center;font-weight:1000;">LOST A PET?</h1>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Montserrat:wght@200&family=Shippori+Antique+B1&display=swap" rel="stylesheet">
+		<style>
+		body{background-image:url('https://cdn.pixabay.com/photo/2015/09/28/10/38/bordeaux-961877_960_720.jpg');background-repeat:no-repeat;background-size:cover;background-attachment:fixed;backdrop-filter:blur(3px);font-family:'Lora', serif; ;}
+		</style>
+	</head>
+	<body>
+		<div id = "root">
+		
+		</div>
+		<script type = "text/babel">
+			class My_form extends React.Component
+			{
+				
+				sub()
+				{
+					//if($("input[name='oname']").val()!= "" && )
+					//event.preventDefault();
+					
+					
+						event.preventDefault();  
+						alert('prevent')
+						$.ajax({
+						
+							url:'https://api.apispreadsheets.com/data/20397/',
+							type:'POST',
+							data:$("#myForm").serializeArray(),
+							success: function(){
+							  alert("Form Data Submitted :)")
+							},
+							error: function(){
+							  alert("There was an error :(")
+							}
+						});
+						$("#myForm").trigger("reset");
+						
+				}				
+			
+				render()
+				{
+					var astyle={color:"white"}
+					var sstyle={width:100,marginLeft:250}
+					var divstyle={marginTop:60,backgroundColor:"050680",height:550,width:650,marginLeft:450,paddingTop:15,paddingLeft:15,color:"white"}
+					return (<div style={divstyle}><form id="myForm" onSubmit = {this.sub}>
+					<label>Owner name: <input type="text" name="oname" required/></label>
+					<br/>
+					<br/>
+					<label>Contact number: <input type="text" name="cno" required/></label> 
+					<br/>
+					<br/>
+					<label>Email id: <input type="email" name="mail" required/></label>
+					<br/>
+					<br/>
+					<label>Pet name: <input type="text" name="pname"/></label>
+					<br/>
+					<br/>
+					<label>Choose which pet you have:</label>
+					<br/>
+					<label>Dog</label><input type="radio" name="dogo" value="dog"/>
+					<br/>
+					<label>Cat</label><input type="radio" name="cato" value="cat"/>
+					<br/>
+					<br/>
+					<label>Breed of pet: <input type="text" name="breed"/></label>
+					<br/>
+					<br/>
+					<label>Colour of pet: <input type="text" name="colour"/></label>
+					<br/>
+					<br/>
+					<label>Does the pet have a collar? If yes, what does it say? If no, enter NA: <input type="text" name="collar"/></label> 
+					<br/>
+					<br/>
+					<label>Location last seen: <input type="text" name="loc" required/></label>
+					<br/>
+					<br/>
+					<label>Latitude (please click): <input type="text" name="lat" id="l" readOnly onClick={this.init} required/></label>
+					<br/>
+					<br/>
+					<label>Longitude: <input type="text" name="lon" id="l1" readOnly  required/></label>
+					<br/>
+					<br/>
+					Click this link to upload a picture of your pet: <a style={astyle}href="https://forms.gle/TXrKndPMRdF6zvNA7" target="_blank">LINK</a>
+					<br/>
+					<br/>
+					<input style={sstyle} type="submit" id="save"/>
+					</form>		</div>
+					
+					)
+				}
+				init()
+				{
+					navigator.geolocation.getCurrentPosition(function(position1){var a=position1.coords.latitude;
+					document.getElementById("l").value=a;
+					var b=position1.coords.longitude;
+					document.getElementById("l1").value=b;},function(error1){
+					switch(error1.code)
+					{
+						case 1:alert("no permission")
+						break;
+					}
+
+				})
+				}
+			
+					
+				
+						
+			}	
+				ReactDOM.render(<My_form />, document.getElementById("root"))
+		</script>
+		
+	</body>
+</html>

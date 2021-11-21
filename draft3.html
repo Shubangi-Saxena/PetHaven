@@ -1,0 +1,140 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!-- logo on the left -->
+<img src="https://www.canva.com/design/DAEtbWN7L4o/wclq_IcSw2MJ0hBL388zUA/view?utm_content=DAEtbWN7L4o&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" id="logo" height="150" width="150" />
+<div class="head_buttons">
+	
+	
+	<button class="headb" id="home" onclick="window.location.href='/';">Home</button>
+	<a href="#abt" class="headb" style="text-decoration:none;">About Us</a>
+	<button class="headb" onclick="window.open('/adoption')">Adoption</button>
+	<button class="headb" onclick="window.open('/donation_shub')">Donate</button>
+	
+</div>
+
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Join us</button>
+  <div class="dropdown-content" style="z-index:1;">
+    <a href="/join" target="_blank">Volunteer</a>
+    <a href="/join" target="_blank">Intern with us</a>
+  </div>
+</div>
+
+<div class="head_buttons2">
+<button class="headb" onclick="window.open('/reviews_mongo1')">Reviews</button>
+<button class="headb" target="_blank" onclick="window.open('/qna')">Q&A</button>
+<button class="headb" onclick="window.open('/awareness');">Awareness</button>
+</div>
+<div style="background-color:blue;">
+<div class="btn"><span class="fas fa-bars"></span></div>
+<nav class="sidebar">
+
+<ul>
+<li>Contact info</li>
+<li>Address</li>
+</ul>
+</nav>
+</div>
+<script>
+$('.btn').click(function(){
+$(this).toggleClass("click")
+$('.sidebar').toggleClass("show")
+});
+
+</script>
+<style>
+
+#logo{position:absolute;margin-left:0;margin-top:0px}
+
+.dropdown:hover .dropdown-content{display:block;}
+.dropdown{float:left;margin-top:50px;}
+.head_buttons2{float:left;margin-top:50px;}
+.dropdown-content a:hover {background-color: #ddd;}
+.dropbtn {
+  background-color: white;
+  color: black;
+  padding: 16px;
+  font-size: 20px;
+  border:none;
+  cursor:pointer;
+  margin-right:15px;
+  
+}
+.dropbtn:hover{border-radius:8px;
+background-color:EA7686}
+.headb:hover{border-radius:8px;
+background-color:EA7686}
+.headb{
+  background-color: white;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border:none;
+  cursor:pointer;
+  margin-right:15px;
+  font-size:20px;
+}
+#home{border-radius:8px; margin-right:30px} <!---->
+.head_buttons{float:left;margin-top:50px;margin-left:200px}
+
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+}
+
+.sidebar{position:fixed;width:300px;height:100%;right:-300px;transition: right 0.4s ease;background-color:EA7686;margin-top:60;z-index:1}
+.btn{right:270;position:absolute;top:68px;height:40px;width:45px;text-align:center;cursor:pointer;transition: right 0.4s ease}
+.btn span{font-size:28px;right:0}
+.btn.click{right:320px}
+.btn.click span:before{content: '\f00d'}
+.sidebar.show{right:0px}
+nav ul li{margin-top:60;margin-right:50;color:white}
+
+.bgimage{position:absolute;margin-top:160;}
+.next{position:absolute;margin-top:160;background-color:#008000;height:500;width:750;margin-left:750;}
+.found{position:absolute;margin-top:290;background-color:#E3D42B;height:250;width:200;margin-left:900;border-radius:5px;}
+.lost{position:absolute;margin-top:290;background-color:#E3D42B;height:250;width:200;margin-left:1150;border-radius:5px;}
+.buttonf{background-color: #E3D42B;color:white;padding: 16px;font-size: 30px;border:none;cursor:pointer;margin-left:30;margin-top:80}
+.buttonf:hover{border-radius:8px;background-color:#050680;}
+
+#abt{position:absolute;margin-top:700;font-size:28}
+#mis{position:absolute;margin-top:900;font-size:28;margin-right:550;background-color:#008000;height:300}
+#mpic{position:absolute;right:30;margin-top:900}
+
+</style>
+</head>
+<body>
+<div class="bgimage">
+<img src="dog2.png" height="500px" width="750px"/>
+</div>
+<div class="next">
+</div>
+<div class="found">
+<button class="buttonf" onclick="window.open('/found_react');">FOUND</button>
+</div>
+<div class="lost">
+<button class="buttonf" onclick="window.open('/lost_react');">LOST</button>
+</div>
+
+<div id="abt">About us <br> PetHaven is a non-profit, non-organization setup in 2021. We are currently located at Banashankari, Bangalore. We are expanding our organization at the moment. Even as a newly established organization, we have helped a lot of pets find their way back to there owners. Our website helps you find your lost pet wherever they are. Our scope only includes cats and dogs at the moment. We also offer you to adopt pets that are with us. </div>
+<div id="mis">MISSION<br>Our mission is very simple. No one wants to lose their pet. But, it happens. We are there to help you find your pet no matter what! We want to create a better world for animals and the people who love and need them. And it all begins with love.</div>
+<div id="mpic"><img src="draft3_pic.jpg" height="300px" width="500px"/></div>
+
+</body>
+</html>

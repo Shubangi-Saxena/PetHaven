@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 	
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+		 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>	
+		 <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Montserrat:wght@200&family=Shippori+Antique+B1&display=swap" rel="stylesheet">
+		<style>
+		#j{text-align:center;margin-top:50;color:rgb(6, 6, 7);}
+		body{background-image:url('https://gimmeinfo.com/wp-content/uploads/2016/02/pets-cat-dog-2.jpg');background-repeat:no-repeat;background-size:cover;background-attachment:fixed;backdrop-filter: blur(4px);font-family:'Lora', serif;}
+		</style>
+	</head>
+	<body>
+		<div id = "root"></div>
+		<div id = "d1"></div>
+		<script type = "text/babel">
+		ReactDOM.render(<h1 id="j">JOIN US</h1>,document.getElementById("root"))
+		class Volunteer extends React.Component
+		{
+			render()
+			{
+				var headstyle={fontSize:40,marginRight:30,color:"black"}
+				var parastyle={fontSize:20,color:"020302",fontWeight:"Bold"}
+				var linkstyle={fontSize:18,textAlign:"center"}
+				return <div><h2 style={headstyle}>{this.props.heading}</h2><p style={parastyle}>{this.props.para}</p><p style={parastyle}>{this.props.para1}</p><br/><br/><h4 style={linkstyle}><iframe width="640" height="1184" frameBorder="0" marginHeight="0" marginWidth="0" src={this.props.link}>Loading...</iframe></h4><br/><br/><br/></div>
+			
+			}
+		}
+		ReactDOM.render(<div><Volunteer heading="Be a Volunteer" para="Volunteering with our organization will be benefial for your emotional, physical, and mental health. It is scientifically proven that spending time with animals helps lower your stress levels and blood pressure. Not only does volunteering encourage civic activity, you will also learn time management and responsibility."
+		para1="To be a volunteer, fill up the application details below in the google form and we will reach out to you as soon as we can!" link="https://docs.google.com/forms/d/e/1FAIpQLSeivDBTS3x9LSbXQd0qm8H8U1T4xw3ltP8EyYlPdIrzamqEag/viewform?embedded=true"/>
+		<Volunteer heading="Intern with us" para="As an intern, you will be part of many projects that our organization works on. You can be part of our extensive research program, help develop materials, build databses and help promote our organization on social media. You will also help conduct workshops to promote awareness in our society and as a bonus, you will be able to gain hands-on experience in various different fields." 
+		para1="To intern with us, fill up the application details in the google form below and we will reach out to you once selected!" link="https://docs.google.com/forms/d/e/1FAIpQLSfuGf-2OEonDb154i8xo8ZmuobNVHshqcB0LpvwA2Ey_Cpqvw/viewform?embedded=true"/></div>,document.getElementById("d1"))
+	</script>
+	</body>
+</html>
